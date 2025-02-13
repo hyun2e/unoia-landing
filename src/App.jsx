@@ -26,8 +26,9 @@ const Section = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: ${({ theme }) => theme.fonts.main};
-  font-size: 32px;
+  font-family: ${({ theme }) => theme.fonts.default};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-size: 20px;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;

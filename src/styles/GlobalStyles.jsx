@@ -1,14 +1,14 @@
 // src/styles/GlobalStyles.js
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import PretendardWoff2 from "../assets/fonts/PretendardVariable.woff2";
+import NotoSansWoff2 from "../assets/fonts/NotoSansKR-Variable.woff2";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
   /* Pretendard Variables 폰트 정의 */
   @font-face {
-    font-family: 'Pretendard';
+    font-family: 'NotoSans';
     src: url(${PretendardWoff2}) format('woff2');
     font-weight: 1 999; /* 변수 폰트 */
     font-style: normal;
