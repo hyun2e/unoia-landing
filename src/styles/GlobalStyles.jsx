@@ -32,7 +32,34 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
   }
+  h1 {
+    font-size: 75px;
+    font-weight: 600;
+    line-height: 124px;
+    color: ${({ theme }) => theme.colors.gray700};
+  }
 
-`;
+  h2 {
+font-size: 50px;
+font-weight: 600;
+line-height: 68px;
+color: ${({ theme }) => theme.colors.gray700};
+}
+
+h3 {
+font-size: 32px;
+font-weight: 400;
+line-height: 48px;
+color: ${({ theme }) => theme.colors.gray600};
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.gray600};
+}
+`;  
+
 
 export default GlobalStyle;
