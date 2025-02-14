@@ -5,7 +5,7 @@ const Herosection = () => {
   return (
     <div
       style={{
-        backgroundImage: `url("../assets/images/hero_img.png")`,
+        backgroundImage: `url("src/assets/images/hero_img.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
