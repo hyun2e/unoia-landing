@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
   /* Pretendard Variables 폰트 정의 */
   @font-face {
     font-family: 'NotoSans';
-    src: url(${PretendardWoff2}) format('woff2');
+    src: url(${NotoSansWoff2}) format('woff2');
     font-weight: 1 999; /* 변수 폰트 */
     font-style: normal;
     font-display: swap;
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'NotoSans', sans-serif;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
   }
