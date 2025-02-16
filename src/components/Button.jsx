@@ -2,38 +2,37 @@
 import React from "react";
 import styled from "styled-components";
 
-// FullButton 스타일 정의
-const FullButton = styled.a`
+// BlackButton 스타일 정의
+const BlackButton = styled.a`
   display: inline-block;
-  padding: 12px 24px;
-  font-family: ${({ theme }) => theme.fonts.main};
-  font-size: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: ${({ theme }) => theme.colors.primary};
+  padding: 28px 60px;
+  font-family: ${({ theme }) => theme.fonts.default};
+  font-size: ${({ theme }) => theme.fontSizes.title2};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  color: white;
+  background-color: black;
   border: none;
-  border-radius: 4px;
+  border-radius: 14px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
+    background-color: ${({ theme }) => theme.colors.coral400};
   }
 `;
 
-// OutlineButton 스타일 정의
-const OutlineButton = styled.a`
+// CoralButton 스타일 정의
+const CoralButton = styled.a`
   display: inline-block;
-  padding: 10px 22px;
-  font-family: ${({ theme }) => theme.fonts.main};
-  font-size: 16px;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary};
-  background-color: #ffffff;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 4px;
+  padding: 28px 60px;
+  font-family: ${({ theme }) => theme.fonts.default};
+  font-size: ${({ theme }) => theme.fontSizes.title1};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  color: white;
+  background-color: ${({ theme }) => theme.colors.coral400};
+  border-radius: 14px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -41,27 +40,58 @@ const OutlineButton = styled.a`
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.coral600};
+    color: white;
   }
 `;
+
+
+// NavButton 스타일 정의
+const NavButton = styled.a`
+  display: inline-block;
+  padding: 14px 26px;
+  font-family: ${({ theme }) => theme.fonts.default};
+  font-size: 16px;
+  font-weight: ${({ theme }) => theme.fontWeights.default};
+  color: white;
+  background-color: ${({ theme }) => theme.colors.coral400};
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.coral600};
+    color: white;
+  }
+`;
+
+
 
 // Button 컴포넌트
 // full-btn
 const Button = ({ type, href, children }) => {
   switch (type) {
-    case "outline-btn":
+    case "black-btn":
       return (
-        <OutlineButton href={href} target="_blank" rel="noopener noreferrer">
+        <BlackButton href={href} target="_blank" rel="noopener noreferrer">
           {children}
-        </OutlineButton>
+        </BlackButton>
       );
-    case "full-btn":
+    case "nav-btn":
+    return (
+      <NavButton href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </NavButton>
+    );
+    case "coral-btn":
     default:
       return (
-        <FullButton href={href} target="_blank" rel="noopener noreferrer">
+        <CoralButton href={href} target="_blank" rel="noopener noreferrer">
           {children}
-        </FullButton>
+        </CoralButton>
       );
   }
 };
