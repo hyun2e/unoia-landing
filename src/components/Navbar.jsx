@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Navlogo from '../assets/images/H_logo.svg';
 
 // NavBar 컨테이너 스타일
 const Nav = styled.nav`
@@ -49,16 +50,11 @@ const NavLink = styled.a`
 `;
 
 
-const Logo = styled.img`
-  width: 120px;
-  height: auto;
-`;
-
 const NavBar = () => {
   return (
     <Nav>
       <ContentsWrapper>
-        <Logo src="src/assets/images/H_logo.png" alt="MyLogo" /> {/* ✅ import한 이미지 적용 */}
+       <img src={Navlogo} width="120" height="auto" />
         <NavButtons>
           <NavLink href="#Section01">유노이아란?</NavLink>
           <NavLink href="#Section02">핵심기능</NavLink>
