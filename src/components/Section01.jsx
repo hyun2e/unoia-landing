@@ -2,36 +2,56 @@ import React from "react";
 import styled from "styled-components";
 
 const SectionContainer = styled.div`
-  background-color: "#E8E3FC"; // Purple50
-  background-position: "center";
+  background-color: #E8E3FC;
+  background-position: center;
   position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 300px 0;
+  overflow: hidden;
+  z-index: 0;
 `;
 
 const BgImg1 = styled.img`
   position: absolute;
-  top: 3%;
-  left: 15%;
+  top: 2%;
+  left: 7%;
+  z-index: -1;
 `;
+
+const BgImg2 = styled.img`
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  z-index: -1;
+`;
+
+const BgImg3 = styled.img`
+  position: absolute;
+  top: 60%;
+  left: -3%;
+  z-index: -1;
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 170px;
+`;
+
+
 
 const Section01 = () => {
   return (
     <SectionContainer>
       <BgImg1 src="src/assets/images/S01_object03.png" />
-      <img src="src/assets/images/S01_object02.png" />
-      <img src="src/assets/images/S01_object01.png" />
+      <BgImg2 src="src/assets/images/S01_object02.png" />
+      <BgImg3 src="src/assets/images/S01_object01.png" />
 
-      {/* 텍스트 컨테이너 */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          margin: "375px auto",
-          gap: "210px",
-        }}
-      >
-        <div style={{ marginBottom: "170px" }}>
+      <TextContainer>
+        <div>
           <h2 style={{ marginBottom: "20px" }}>
             Emily in Paris를 보고
             <br />
@@ -46,7 +66,7 @@ const Section01 = () => {
           </p>
         </div>
 
-        <div style={{ marginBottom: "170px" }}>
+        <div>
           <h2 style={{ marginBottom: "20px" }}>
             다른 나라의 2030의
             <br />
@@ -59,7 +79,7 @@ const Section01 = () => {
           </p>
         </div>
 
-        <div style={{ marginBottom: "170px" }}>
+        <div>
           <h2 style={{ marginBottom: "20px" }}>
             트럼프 당선 이후 뉴스 말고
             <br />
@@ -76,7 +96,7 @@ const Section01 = () => {
         <div>
           <h2>있으신가요?</h2>
         </div>
-      </div>
+      </TextContainer>
     </SectionContainer>
   );
 };
