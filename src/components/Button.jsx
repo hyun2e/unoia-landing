@@ -5,7 +5,7 @@ import styled from "styled-components";
 // BlackButton 스타일 정의
 const BlackButton = styled.a`
   display: inline-block;
-  padding: 28px 60px;
+  padding: 28px 44px;
   font-family: ${({ theme }) => theme.fonts.default};
   font-size: ${({ theme }) => theme.fontSizes.title2};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
