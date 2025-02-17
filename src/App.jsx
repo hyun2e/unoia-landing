@@ -43,10 +43,15 @@ const Section = styled.section`
   font-size: 20px;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 300px;
+    font-size: 20px;
+  }
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 800px;
+  max-width: 1920px;
   margin: auto;
 `;
 
@@ -55,8 +60,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <NavBar />
+
         <ContentWrapper>
+          <NavBar />
           {/* 만든 섹션 컴포넌트 추가 */}
           <Herosection />
           <Section01 />

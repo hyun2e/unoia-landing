@@ -4,10 +4,17 @@ import Button from "./Button";
 import Navlogo from "../assets/images/H_logo.svg";
 
 // NavBar 컨테이너 스타일
+const NavWrapper = styled.div`
+  width: 100%;
+  max-width: 1920px; /* ✅ 1920px 이상 안 커지도록 제한 */
+  margin: auto;
+`;
+
 const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 1920px;
   height: 100px;
   background-color: ${({ theme }) => theme.colors.brown50};
   display: flex;
@@ -51,21 +58,23 @@ const NavLink = styled.a`
 
 const NavBar = () => {
   return (
-    <Nav>
-      <ContentsWrapper>
-        <img src={Navlogo} width="120" height="auto" />
-        <NavButtons>
-          <NavLink href="#Section01">유노이아란?</NavLink>
-          <NavLink href="#Section02">핵심기능</NavLink>
-          <NavLink href="#Section09">후기</NavLink>
+    <NavWrapper>
+      <Nav>
+        <ContentsWrapper>
+          <img src={Navlogo} width="120" height="auto" />
+          <NavButtons>
+            <NavLink href="#Section01">유노이아란?</NavLink>
+            <NavLink href="#Section02">핵심기능</NavLink>
+            <NavLink href="#Section09">후기</NavLink>
 
-          {/* 다운로드 버튼 */}
-          <Button type="nav-btn" as="a" href="#Unoiadownload">
-            다운로드
-          </Button>
-        </NavButtons>
-      </ContentsWrapper>
-    </Nav>
+            {/* 다운로드 버튼 */}
+            <Button type="nav-btn" as="a" href="#Unoiadownload">
+              다운로드
+            </Button>
+          </NavButtons>
+        </ContentsWrapper>
+      </Nav>
+    </NavWrapper>
   );
 };
 
