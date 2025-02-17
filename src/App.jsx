@@ -45,25 +45,32 @@ const Section = styled.section`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
+const ContentWrapper = styled.div`
+  max-width: 800px;
+  margin: auto;
+`;
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <NavBar />
-        {/* 만든 섹션 컴포넌트 추가 */}
-        <Herosection />
-        <Section01 />
-        <Section02 />
-        <Section03 />
-        <Section04 />
-        <Section05 />
-        <Section06 />
-        <Section07/>
-        <Section08/>
-        <Section09 />
-        <Section10 />
-        <Footer />
+        <ContentWrapper>
+          {/* 만든 섹션 컴포넌트 추가 */}
+          <Herosection />
+          <Section01 />
+          <Section02 />
+          <Section03 />
+          <Section04 />
+          <Section05 />
+          <Section06 />
+          <Section07 />
+          <Section08 />
+          <Section09 />
+          <Section10 />
+          <Footer />
+        </ContentWrapper>
         {/* 추가 섹션 필요 시 추가 */}
       </>
     </ThemeProvider>

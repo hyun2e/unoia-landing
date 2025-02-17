@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import Navlogo from '../assets/images/H_logo.svg';
+import Navlogo from "../assets/images/H_logo.svg";
 
 // NavBar 컨테이너 스타일
 const Nav = styled.nav`
@@ -49,19 +49,20 @@ const NavLink = styled.a`
   }
 `;
 
-
 const NavBar = () => {
   return (
     <Nav>
       <ContentsWrapper>
-       <img src={Navlogo} width="120" height="auto" />
+        <img src={Navlogo} width="120" height="auto" />
         <NavButtons>
           <NavLink href="#Section01">유노이아란?</NavLink>
           <NavLink href="#Section02">핵심기능</NavLink>
           <NavLink href="#Section09">후기</NavLink>
 
           {/* 다운로드 버튼 */}
-          <Button type="nav-btn" as="a" href="#Unoiadownload">다운로드</Button>
+          <Button type="nav-btn" as="a" href="#Unoiadownload">
+            다운로드
+          </Button>
         </NavButtons>
       </ContentsWrapper>
     </Nav>
