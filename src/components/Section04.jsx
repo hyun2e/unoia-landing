@@ -40,7 +40,7 @@ const TextContainer = styled(motion.div)`
 
 const Section04 = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // 한 번만 실행
+    triggerOnce: false, // 한 번만 실행
     threshold: 0.1, // 10% 보이면 실행
   });
 
@@ -51,9 +51,11 @@ const Section04 = () => {
       console.log("스크롤 감지됨: 1.5초 후 텍스트 등장");
       setTimeout(() => {
         setShowText(true);
-      }, 500); // 1초 후 텍스트 등장
+      }, 1000);
+    } else {
+      setShowText(false); // 스크롤 벗어나면 다시 숨김
     }
-  }, [inView]);
+  }, [inView]); // inView가 변할 때마다 실행
 
   return (
     <StyledSection ref={ref}>
