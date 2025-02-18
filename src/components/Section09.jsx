@@ -19,7 +19,6 @@ const RowContainer = styled.div`
 `;
 
 const AwardWrapper = styled.div`
-  width: 800px;
   margin: auto;
   padding: 48px 0px 60px 0px;
   p {
@@ -29,7 +28,6 @@ const AwardWrapper = styled.div`
 `;
 
 const AwardImageContainer = styled.div`
-  width: 800px;
   display: flex;
   flex-direction: row;
   justify-content: center;
