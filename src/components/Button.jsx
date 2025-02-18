@@ -20,6 +20,7 @@ const BlackButton = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.brown50};
+    color: ${({ theme }) => theme.colors.brown600};
   }
 `;
 
