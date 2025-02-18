@@ -3,6 +3,10 @@ import Reviewcard from "./Reviewcard";
 import styled from "styled-components";
 import Headline from "./Headline";
 
+const StyledSection09 = styled.div`
+  background-color: ${({ theme }) => theme.colors.brown50};
+`;
+
 const ReviewCardContainer = styled.div`
 margin: auto;
 `;
@@ -16,11 +20,11 @@ const RowContainer = styled.div`
 
 const AwardWrapper = styled.div`
   width: 800px;
-  margin: 80px auto;
-
+  margin: auto;
+  padding: 48px 0px 60px 0px;
   p {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -103,7 +107,7 @@ const Section09 = () => {
   ];
 
   return (
-    <>
+    <StyledSection09>
       <Headline
         title="Unoia로 대화를 나눈 유저들의 이야기"
         title_width="460px"
@@ -139,7 +143,7 @@ const Section09 = () => {
           <img src="src/assets/images/S09_Prize_right.png" />
         </AwardImageContainer>
       </AwardWrapper>
-    </>
+    </StyledSection09>
   );
 };
 

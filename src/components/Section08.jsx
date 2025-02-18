@@ -8,6 +8,10 @@ const saveFunctionInfo = [
   {title: "다른사람의 피드도, 내가 쓴 피드도 저장", src: "src/assets/images/S08_Mock_up05.png"},
 ];
 
+const StyledSection08 = styled.div`
+  background-color: ${({ theme }) => theme.colors.brown50};
+`;
+
 const SideSlide = styled.div`
   background-color: ${({ theme }) => theme.colors.mint300};
   border-radius: 14px 0px 0px 0px;
@@ -59,25 +63,23 @@ const RightElements = styled.div`
 
 const Section08 = () => {
   return (
-    <div>
+    <StyledSection08>
       <Headline
         title="내가 만난 세계, 보관함에 저장!"
         title_width="330px"
         description="전 세계 친구들과 대화하는 경험을 요약하고 저장해 언제든 꺼내보세요."
-        description_width="296px" />
-      <div>
-        <SideSlide>
-          <h3>손쉽게 분류하는 앨범형 보관함</h3>
-          <ImageWrapper>
-            <img src = "src/assets/images/S08_Mock_up03.png" />
-          </ImageWrapper>
-          <RightElements>
-            <div />
-          </RightElements>
-        </SideSlide>
-        
-      </div>
-    </div>
+        description_width="296px"
+      />
+      <SideSlide>
+        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+        <ImageWrapper>
+          <img src = "src/assets/images/S08_Mock_up03.png" />
+        </ImageWrapper>
+        <RightElements>
+          <div />
+        </RightElements>
+      </SideSlide>
+    </StyledSection08>
   )
 }
 
