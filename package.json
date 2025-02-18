@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^12.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.15.1",
     "styled-components": "^6.1.14",
     "styled-reset": "^4.5.2",
     "unoia-landing": "file:"

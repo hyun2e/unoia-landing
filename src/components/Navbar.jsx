@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import Navlogo from "../assets/images/H_logo.svg";
