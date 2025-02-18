@@ -19,7 +19,7 @@ const BlackButton = styled.a`
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.coral400};
+    background-color: ${({ theme }) => theme.colors.brown50};
   }
 `;
 
