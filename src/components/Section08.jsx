@@ -1,11 +1,20 @@
-import React from 'react'
-import Headline from './Headline';
-import styled from 'styled-components';
+import React from "react";
+import Headline from "./Headline";
+import styled from "styled-components";
 
 const saveFunctionInfo = [
-  {title: "손쉽게 분류하는 앨범형 보관함", src: "src/assets/images/S08_Mock_up03.png"},
-  {title: "열띈 토론 후 AI 요약으로 대화 내용을 한 눈에 확인", src: "src/assets/images/S08_Mock_up04.png"},
-  {title: "다른사람의 피드도, 내가 쓴 피드도 저장", src: "src/assets/images/S08_Mock_up05.png"},
+  {
+    title: "손쉽게 분류하는 앨범형 보관함",
+    src: "src/assets/images/S08_Mock_up03.png",
+  },
+  {
+    title: "열띈 토론 후 AI 요약으로 대화 내용을 한 눈에 확인",
+    src: "src/assets/images/S08_Mock_up04.png",
+  },
+  {
+    title: "다른사람의 피드도, 내가 쓴 피드도 저장",
+    src: "src/assets/images/S08_Mock_up05.png",
+  },
 ];
 
 const StyledSection08 = styled.div`
@@ -74,14 +83,32 @@ const Section08 = () => {
       <SideSlide>
         <h3>손쉽게 분류하는 앨범형 보관함</h3>
         <ImageWrapper>
-          <img src = "src/assets/images/S08_Mock_up03.png" />
+          <img src="src/assets/images/S08_Mock_up03.png" />
+        </ImageWrapper>
+        <RightElements>
+          <div />
+        </RightElements>
+      </SideSlide>
+      <SideSlide>
+        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+        <ImageWrapper>
+          <img src="src/assets/images/S08_Mock_up03.png" />
+        </ImageWrapper>
+        <RightElements>
+          <div />
+        </RightElements>
+      </SideSlide>
+      <SideSlide>
+        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+        <ImageWrapper>
+          <img src="src/assets/images/S08_Mock_up03.png" />
         </ImageWrapper>
         <RightElements>
           <div />
         </RightElements>
       </SideSlide>
     </StyledSection08>
-  )
-}
+  );
+};
 
-export default Section08
+export default Section08;

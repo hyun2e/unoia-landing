@@ -2328,7 +2328,7 @@ unbox-primitive@^1.1.0:
     react-intersection-observer "^9.15.1"
     styled-components "^6.1.14"
     styled-reset "^4.5.2"
-    unoia-landing "file:../../../AppData/Local/Yarn/Cache/v6/npm-unoia-landing-0.0.0-c7d99ec4-ce53-45df-acc8-673b5d362ad5-1739863931449/node_modules/unoia-landing"
+    unoia-landing "file:../../../AppData/Local/Yarn/Cache/v6/npm-unoia-landing-0.0.0-16b9963a-b678-4e64-ab4f-774cbe162c94-1739876343202/node_modules/unoia-landing"
 
 update-browserslist-db@^1.1.1:
   version "1.1.2"
