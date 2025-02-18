@@ -10,6 +10,7 @@ const saveFunctionInfo = [
 
 const StyledSection08 = styled.div`
   background-color: ${({ theme }) => theme.colors.brown50};
+  overflow: hidden;
 `;
 
 const SideSlide = styled.div`
