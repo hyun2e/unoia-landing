@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const SectionContainer = styled.div`
@@ -12,25 +13,40 @@ const SectionContainer = styled.div`
   z-index: 0;
 `;
 
-const BgImg1 = styled.img`
+const pendulumAnimation = {
+  animate: {
+    rotate: [-5, 5, -5], // 시계추처럼 좌우로 흔들리는 애니메이션
+    transition: {
+      duration: 4, // 4초 동안 한 사이클
+      repeat: Infinity, // 무한 반복
+      repeatType: "reverse",
+      ease: "easeInOut",
+    },
+  },
+};
+
+const BgImg1 = styled(motion.img)`
   position: absolute;
   top: 2%;
   left: 7%;
   z-index: -1;
+  transform-origin: center; /* 중심축 기준 회전 */
 `;
 
-const BgImg2 = styled.img`
+const BgImg2 = styled(motion.img)`
   position: absolute;
   top: 30%;
   left: 55%;
   z-index: -1;
+  transform-origin: center;
 `;
 
-const BgImg3 = styled.img`
+const BgImg3 = styled(motion.img)`
   position: absolute;
   top: 60%;
   left: -3%;
   z-index: -1;
+  transform-origin: center;
 `;
 
 const TextContainer = styled.div`
@@ -41,14 +57,12 @@ const TextContainer = styled.div`
   gap: 170px;
 `;
 
-
-
 const Section01 = () => {
   return (
     <SectionContainer>
-      <BgImg1 src="src/assets/images/S01_object03.png" />
-      <BgImg2 src="src/assets/images/S01_object02.png" />
-      <BgImg3 src="src/assets/images/S01_object01.png" />
+      <BgImg1 src="src/assets/images/S01_object03.png" {...pendulumAnimation} />
+      <BgImg2 src="src/assets/images/S01_object02.png" {...pendulumAnimation} />
+      <BgImg3 src="src/assets/images/S01_object01.png" {...pendulumAnimation} />
 
       <TextContainer>
         <div>
