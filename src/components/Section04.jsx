@@ -29,7 +29,7 @@ const TextContainer = styled(motion.div)`
   font-weight: ${({ theme }) => theme.textStyle.P_M.fontWeight}; /* 600 */
   line-height: ${({ theme }) => theme.textStyle.P_M.LineHeight}; /* 68px */
   color: ${({ theme }) => theme.textStyle.P_M.color}; /* #323242 */
-  max-width: 606px;
+  max-width: 660px;
   text-align: center;
   position: absolute;
   bottom: 50%;
