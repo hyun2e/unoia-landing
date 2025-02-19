@@ -62,9 +62,9 @@ const NavBar = () => {
         <ContentsWrapper>
           <img src={Navlogo} width="120" height="auto" />
           <NavButtons>
-            <NavLink href="#Section01">유노이아란?</NavLink>
-            <NavLink href="#Section02">핵심기능</NavLink>
-            <NavLink href="#Section09">후기</NavLink>
+            <NavLink href="#introduce">유노이아란?</NavLink>
+            <NavLink href="#keyFeatures">핵심기능</NavLink>
+            <NavLink href="#review">후기</NavLink>
 
             {/* 다운로드 버튼 */}
             <Button type="nav-btn" as="a" href="#Unoiadownload">

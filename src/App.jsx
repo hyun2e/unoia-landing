@@ -65,15 +65,21 @@ const App = () => {
           <NavBar />
           {/* 만든 섹션 컴포넌트 추가 */}
           <Herosection />
-          <Section01 />
+          <div id="introduce">
+            <Section01 />
+          </div>
           <Section02 />
           <Section03 />
           <Section04 />
-          <Section05 />
+          <div id="keyFeatures">
+            <Section05 />
+          </div>
           <Section06 />
           <Section07 />
           <Section08 />
-          <Section09 />
+          <div id="review">
+            <Section09 />
+          </div>
           <Section10 />
           <Footer />
         </ContentWrapper>
