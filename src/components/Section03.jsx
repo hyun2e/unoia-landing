@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import bgImage from '../assets/images/S03_background_img.png'; // 경로 확인 필수!
-import mockup1 from '../assets/images/S03_Mock_up01.png'; // ✅ 이미지 import
-import mockup2 from '../assets/images/S03_Mock_up02.png'; // ✅ 이미지 import
-import styled from 'styled-components';
+import { useRef, useEffect } from "react";
+import bgImage from "../assets/images/S03_background_img.png"; // 배경 이미지
+import mockup1 from "../assets/images/S03_Mock_up01.png"; // ✅ 이미지 import
+import mockup2 from "../assets/images/S03_Mock_up02.png"; // ✅ 이미지 import
+import styled from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const StyledSection03 = styled.div`
@@ -14,6 +14,7 @@ const StyledSection03 = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  height: 100vh; /* 섹션이 전체 화면에서 보이도록 */
 `;
 
 const MockupImageBack = styled(motion.img)`
@@ -29,32 +30,33 @@ const Section03 = () => {
   const sectionRef = useRef(null);
   const controlsBack = useAnimation();
   const controlsFront = useAnimation();
-  const isInView = useInView(sectionRef);
+  const isInView = useInView(sectionRef, { once: false }); // ❗️ `once: false` → 스크롤할 때마다 반복 실행
 
   useEffect(() => {
     if (isInView) {
-      const timeout = setTimeout(() => {
-        controlsBack.start({ x: -120, rotate: -12, transition: { duration: 0.5 } });
-        controlsFront.start({ x: 80, rotate: 12, transition: { duration: 0.5 } });
-      }, 800);
-      return () => clearTimeout(timeout);
+      controlsBack.start({ x: -120, rotate: -12, transition: { duration: 0.5 } });
+      controlsFront.start({ x: 80, rotate: 12, transition: { duration: 0.5 } });
+    } else {
+      // 🔄 원래 위치로 되돌려서 다시 애니메이션 실행 가능하게 설정
+      controlsBack.start({ x: 0, rotate: 0, transition: { duration: 0.5 } });
+      controlsFront.start({ x: 0, rotate: 0, transition: { duration: 0.5 } });
     }
-  }, [isInView, controlsBack, controlsFront]);
+  }, [isInView, controlsBack, controlsFront]); // `isInView`가 바뀔 때마다 실행
 
   return (
     <StyledSection03 ref={sectionRef}>
-        <MockupImageBack 
-          initial={{ x: 0, rotate: 0 }} 
-          animate={controlsBack} 
-          src={mockup1} 
-          alt="mockup1" 
-        />
-        <MockupImageFront 
-          initial={{ x: 0, rotate: 0 }} 
-          animate={controlsFront} 
-          src={mockup2} 
-          alt="mockup2" 
-        />
+      <MockupImageBack
+        initial={{ x: 0, rotate: 0 }}
+        animate={controlsBack}
+        src={mockup1}
+        alt="mockup1"
+      />
+      <MockupImageFront
+        initial={{ x: 0, rotate: 0 }}
+        animate={controlsFront}
+        src={mockup2}
+        alt="mockup2"
+      />
     </StyledSection03>
   );
 };
