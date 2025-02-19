@@ -1,4 +1,3 @@
-import React from "react";
 import AICard from "./AICard";
 import Headline from "./Headline";
 import styled from "styled-components";
