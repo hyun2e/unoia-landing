@@ -57,6 +57,10 @@ const AwardWrapper = styled.div`
   margin-top: 40px;
   padding: 48px 0px 60px 0px;
   text-align: center;
+
+  p {
+    margin-bottom: 30px;
+  }
 `;
 
 const AwardImageContainer = styled.div`
