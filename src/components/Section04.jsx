@@ -48,7 +48,6 @@ const Section04 = () => {
 
   useEffect(() => {
     if (inView) {
-      console.log("스크롤 감지됨: 1.5초 후 텍스트 등장");
       setTimeout(() => {
         setShowText(true);
       }, 1000);
@@ -69,8 +68,10 @@ const Section04 = () => {
           animate={{ opacity: 1, y: 0 }} // 부드럽게 위로 등장
           transition={{ duration: 1.5, ease: "easeOut" }} // 애니메이션 속도 조절
         >
-          언어의 장벽을 부수고<br />
-          Unoia에서<br />
+          언어의 장벽을 부수고
+          <br />
+          Unoia에서
+          <br />
           자유롭게 이야기를 나눠보세요!
         </TextContainer>
       )}
