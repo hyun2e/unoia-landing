@@ -1,29 +1,18 @@
 import React from "react";
 import Headline from "./Headline";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const saveFunctionInfo = [
-  {
-    title: "손쉽게 분류하는 앨범형 보관함",
-    src: "src/assets/images/S08_Mock_up03.png",
-  },
-  {
-    title: "열띈 토론 후 AI 요약으로 대화 내용을 한 눈에 확인",
-    src: "src/assets/images/S08_Mock_up04.png",
-  },
-  {
-    title: "다른사람의 피드도, 내가 쓴 피드도 저장",
-    src: "src/assets/images/S08_Mock_up05.png",
-  },
-];
-
+// styled-components 부분
 const StyledSection08 = styled.div`
   background-color: ${({ theme }) => theme.colors.brown50};
   overflow: hidden;
+  padding-bottom: 700px;
+  position: relative;  // 부모 요소에 relative 추가
 `;
 
-const SideSlide = styled.div`
-  background-color: ${({ theme }) => theme.colors.mint300};
+const SideSlide = styled(motion.div)`
+  background-color: ${({ theme, bgcolor }) => theme.colors[bgcolor]};
   border-radius: 14px 0px 0px 0px;
 
   display: flex;
@@ -31,12 +20,16 @@ const SideSlide = styled.div`
   justify-content: center;
   gap: 70px;
 
-  position: relative;
+  position: absolute;  // absolute로 설정하여 겹치게 함
+
+  width: 100%;          // 너비 고정 (부모 요소에 맞게)
+  height: 100%;         // 높이 고정 (부모 요소에 맞게)
 
   h3 {
     margin: 300px 0px 300px 40px;
-    width: 215px;
+    width: 300px;
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    text-align: right;
   }
 `;
 
@@ -54,23 +47,6 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const RightElements = styled.div`
-  background-color: ${({ theme }) => theme.colors.coral200};
-  border-radius: 14px 0px 0px 0px;
-  width: 180px;
-  height: 100%;
-  position: absolute;
-  left: 1740px;
-
-  div {
-    background-color: ${({ theme }) => theme.colors.purple200};
-    border-radius: 14px 0px 0px 0px;
-    width: 90px;
-    height: 100%;
-    margin-left: auto;
-  }
-`;
-
 const Section08 = () => {
   return (
     <StyledSection08>
@@ -80,33 +56,43 @@ const Section08 = () => {
         description="전 세계 친구들과 대화하는 경험을 요약하고 저장해 언제든 꺼내보세요."
         description_width="296px"
       />
-      <SideSlide>
-        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+      
+      {/* 첫 번째 SideSlide */}
+      <SideSlide
+        bgcolor="mint300"
+      >
+        <h3>손쉽게 분류하는<br />앨범형 보관함</h3>
         <ImageWrapper>
           <img src="src/assets/images/S08_Mock_up03.png" />
         </ImageWrapper>
-        <RightElements>
-          <div />
-        </RightElements>
       </SideSlide>
-      <SideSlide>
-        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+
+      {/* 두 번째 SideSlide (첫 번째 완료 후 시작) */}
+      <SideSlide
+        bgcolor="coral200"
+        initial={{ x: "90%" }}
+        whileInView={{ x: "100px" }}  // 두 번째는 약간 덜 이동하도록 수정
+        transition={{ duration: 1, delay: 1 }}  // 1초 후 애니메이션 시작
+      >
+        <h3>다른 사람의 피드도,<br />내가 쓴 피드도 저장</h3>
         <ImageWrapper>
-          <img src="src/assets/images/S08_Mock_up03.png" />
+          <img src="src/assets/images/S08_Mock_up04.png" />
         </ImageWrapper>
-        <RightElements>
-          <div />
-        </RightElements>
       </SideSlide>
-      <SideSlide>
-        <h3>손쉽게 분류하는 앨범형 보관함</h3>
+
+      {/* 세 번째 SideSlide (두 번째 완료 후 시작) */}
+      <SideSlide
+        bgcolor="purple200"
+        initial={{ x: "95%" }}
+        whileInView={{ x: "200px" }}  // 세 번째는 더 덜 이동하도록 수정
+        transition={{ duration: 1, delay: 2 }}  // 2초 후 애니메이션 시작
+      >
+        <h3>AI로 요약된 대화, <br /> 한 눈에 확인하는 내용</h3>
         <ImageWrapper>
-          <img src="src/assets/images/S08_Mock_up03.png" />
+          <img src="src/assets/images/S08_Mock_up05.png" />
         </ImageWrapper>
-        <RightElements>
-          <div />
-        </RightElements>
       </SideSlide>
+
     </StyledSection08>
   );
 };

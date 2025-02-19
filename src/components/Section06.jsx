@@ -79,7 +79,7 @@ const Section06 = () => {
             key={i}
             initial={{ opacity: 0 }}   // 시작 상태
             whileInView={{ opacity: 1 }}  // 화면에 들어오면 opacity가 1로 변경
-            transition={{ duration: 0.5, delay: i * 0.4 }} // 1초 텀을 두고
+            transition={{ duration: 0.3, delay: i * 0.3 }} // 1초 텀을 두고
           >
             {e1.map((e2, j) => (
               <AICard key={j} info={e2} row_index={i} />
