@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const StyledSection02 = styled.div`
   background-color: #ffffff;
@@ -7,6 +8,13 @@ const StyledSection02 = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+`;
+
+const AnimatedContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 `;
 
@@ -29,11 +37,18 @@ const Description = styled.p`
 const Section02 = () => {
   return (
     <StyledSection02>
-      <Title>지금 바로 물어보세요</Title>
-      <Description>
-        Unoia는 다양한 문화권의 사람들과 질문을 통해 교류하며
-        트렌드와 이해를 쌓아 가는 문화 교류 플랫폼입니다.
-      </Description>
+      {/* Title과 Description을 감싸는 컨테이너를 motion.div로 감싸서 함께 애니메이션 적용 */}
+      <AnimatedContainer
+        initial={{ scale: 1 }} /* 초기 크기 */
+        whileInView={{ scale: [1, 1.2, 1] }} /* 커졌다가 다시 작아짐 */
+        transition={{ duration: 1 }} /* 애니메이션 지속 시간 */
+        viewport={{ amount: 0.5 }} /* 화면 50% 이상 보이면 실행 */
+      >
+        <Title>지금 바로 물어보세요</Title>
+        <Description>
+          Unoia는 다양한 문화권의 사람들과 질문을 통해 교류하며 트렌드와 이해를 쌓아 가는 문화 교류 플랫폼입니다.
+        </Description>
+      </AnimatedContainer>
     </StyledSection02>
   );
 };
