@@ -13,12 +13,36 @@ const SectionContainer = styled.div`
   z-index: 0;
 `;
 
-const pendulumAnimation = {
+const pendulumAnimation1 = {
   animate: {
-    rotate: [-5, 5, -5], // 시계추처럼 좌우로 흔들리는 애니메이션
+    rotate: [-5, 5, -5],
     transition: {
-      duration: 4, // 4초 동안 한 사이클
-      repeat: Infinity, // 무한 반복
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut",
+    },
+  },
+};
+
+const pendulumAnimation2 = {
+  animate: {
+    rotate: [-8, 8, -8],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut",
+    },
+  },
+};
+
+const pendulumAnimation3 = {
+  animate: {
+    rotate: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
       repeatType: "reverse",
       ease: "easeInOut",
     },
@@ -30,7 +54,7 @@ const BgImg1 = styled(motion.img)`
   top: 2%;
   left: 7%;
   z-index: -1;
-  transform-origin: center; /* 중심축 기준 회전 */
+  transform-origin: center;
 `;
 
 const BgImg2 = styled(motion.img)`
@@ -60,9 +84,9 @@ const TextContainer = styled.div`
 const Section01 = () => {
   return (
     <SectionContainer>
-      <BgImg1 src="src/assets/images/S01_object03.png" {...pendulumAnimation} />
-      <BgImg2 src="src/assets/images/S01_object02.png" {...pendulumAnimation} />
-      <BgImg3 src="src/assets/images/S01_object01.png" {...pendulumAnimation} />
+      <BgImg1 src="src/assets/images/S01_object03.png" {...pendulumAnimation1} />
+      <BgImg2 src="src/assets/images/S01_object02.png" {...pendulumAnimation2} />
+      <BgImg3 src="src/assets/images/S01_object01.png" {...pendulumAnimation3} />
 
       <TextContainer>
         <div>
