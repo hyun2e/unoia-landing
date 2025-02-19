@@ -1,32 +1,36 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Headline from "./Headline";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-// styled-components 부분
+// SectionWrapper: 핀 효과를 위해 추가 스크롤 영역 제공
+const SectionWrapper = styled.div`
+  height: 300vh; /* 전체 스크롤 길이 (필요에 따라 조절) */
+  position: relative;
+`;
+
+// StyledSection08: 100vh 높이 & 화면에 고정 (pin)
 const StyledSection08 = styled.div`
   background-color: ${({ theme }) => theme.colors.brown50};
   overflow: hidden;
-  padding-bottom: 700px;
-  position: relative;  // 부모 요소에 relative 추가
+  height: 100vh;
+  position: sticky;
+  top: 0;
 `;
 
+// SideSlide: 애니메이션 대상 요소
 const SideSlide = styled(motion.div)`
   background-color: ${({ theme, bgcolor }) => theme.colors[bgcolor]};
-  border-radius: 14px 0px 0px 0px;
-
+  border-radius: 14px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 70px;
-
-  position: absolute;  // absolute로 설정하여 겹치게 함
-
-  width: 100%;          // 너비 고정 (부모 요소에 맞게)
-  height: 100%;         // 높이 고정 (부모 요소에 맞게)
+  position: absolute;
+  width: 100%;
 
   h3 {
-    margin: 300px 0px 300px 40px;
+    margin: 300px 0 300px 40px;
     width: 300px;
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
     text-align: right;
@@ -48,52 +52,97 @@ const ImageWrapper = styled.div`
 `;
 
 const Section08 = () => {
+  // 실제 스크롤 되는 컨테이너에 ref 연결
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // 두 번째 SideSlide:
+  // 0%~33%: "90%" 고정
+  // 33%~45%: "90%" -> "8%x" 선형 전환
+  // 46%~65% 및 그 이후: "6%" 고정
+  const secondSlideX = useTransform(
+    scrollYProgress,
+    [0, 0.33, 0.45, 0.65, 1],
+    ["90%", "90%", "14%", "6%", "6%"]
+  );
+  // (부드러운 효과를 원하면 useSpring으로 감싸는 것도 고려)
+  const smoothSecondSlideX = useSpring(secondSlideX, {
+    damping: 20,
+    stiffness: 100,
+  });
+
+  // 세 번째 SideSlide:
+  // 0%~66%: "95%" 고정
+  // 66%~85%: "95%" -> "14%" 선형 전환
+  // 46%~65% 및 그 이후: "12%" 고정
+  const thirdSlideX = useTransform(
+    scrollYProgress,
+    [0, 0.66, 0.85, 1],
+    ["95%", "95%", "20%", "12%"]
+  );
+  const smoothThirdSlideX = useSpring(thirdSlideX, {
+    damping: 20,
+    stiffness: 100,
+  });
+
+  // scrollYProgress 값이 바뀔 때마다 콘솔에 출력 (디버깅용)
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      console.log("Scroll progress:", latest);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <StyledSection08>
-      <Headline
-        title="내가 만난 세계, 보관함에 저장!"
-        title_width="330px"
-        description="전 세계 친구들과 대화하는 경험을 요약하고 저장해 언제든 꺼내보세요."
-        description_width="296px"
-      />
-      
-      {/* 첫 번째 SideSlide */}
-      <SideSlide
-        bgcolor="mint300"
-      >
-        <h3>손쉽게 분류하는<br />앨범형 보관함</h3>
-        <ImageWrapper>
-          <img src="src/assets/images/S08_Mock_up03.png" />
-        </ImageWrapper>
-      </SideSlide>
+    // containerRef를 SectionWrapper에 연결
+    <SectionWrapper ref={containerRef}>
+      <StyledSection08>
+        <Headline
+          title="내가 만난 세계, 보관함에 저장!"
+          title_width="330px"
+          description="전 세계 친구들과 대화하는 경험을 요약하고 저장해 언제든 꺼내보세요."
+          description_width="296px"
+        />
 
-      {/* 두 번째 SideSlide (첫 번째 완료 후 시작) */}
-      <SideSlide
-        bgcolor="coral200"
-        initial={{ x: "90%" }}
-        whileInView={{ x: "100px" }}  // 두 번째는 약간 덜 이동하도록 수정
-        transition={{ duration: 1, delay: 1 }}  // 1초 후 애니메이션 시작
-      >
-        <h3>다른 사람의 피드도,<br />내가 쓴 피드도 저장</h3>
-        <ImageWrapper>
-          <img src="src/assets/images/S08_Mock_up04.png" />
-        </ImageWrapper>
-      </SideSlide>
+        {/* 첫 번째 SideSlide: 고정 (x: 0) */}
+        <SideSlide bgcolor="mint300">
+          <h3>
+            손쉽게 분류하는
+            <br />
+            앨범형 보관함
+          </h3>
+          <ImageWrapper>
+            <img src="src/assets/images/S08_Mock_up03.png" alt="Mock Up 03" />
+          </ImageWrapper>
+        </SideSlide>
 
-      {/* 세 번째 SideSlide (두 번째 완료 후 시작) */}
-      <SideSlide
-        bgcolor="purple200"
-        initial={{ x: "95%" }}
-        whileInView={{ x: "200px" }}  // 세 번째는 더 덜 이동하도록 수정
-        transition={{ duration: 1, delay: 2 }}  // 2초 후 애니메이션 시작
-      >
-        <h3>AI로 요약된 대화, <br /> 한 눈에 확인하는 내용</h3>
-        <ImageWrapper>
-          <img src="src/assets/images/S08_Mock_up05.png" />
-        </ImageWrapper>
-      </SideSlide>
+        {/* 두 번째 SideSlide */}
+        <SideSlide bgcolor="coral200" style={{ x: smoothSecondSlideX }}>
+          <h3>
+            다른 사람의 피드도,
+            <br />
+            내가 쓴 피드도 저장
+          </h3>
+          <ImageWrapper>
+            <img src="src/assets/images/S08_Mock_up04.png" alt="Mock Up 04" />
+          </ImageWrapper>
+        </SideSlide>
 
-    </StyledSection08>
+        {/* 세 번째 SideSlide */}
+        <SideSlide bgcolor="purple200" style={{ x: smoothThirdSlideX }}>
+          <h3>
+            AI로 요약된 대화,
+            <br /> 한 눈에 확인하는 내용
+          </h3>
+          <ImageWrapper>
+            <img src="src/assets/images/S08_Mock_up05.png" alt="Mock Up 05" />
+          </ImageWrapper>
+        </SideSlide>
+      </StyledSection08>
+    </SectionWrapper>
   );
 };
 
