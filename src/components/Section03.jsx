@@ -14,7 +14,6 @@ const StyledSection03 = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 100vh; /* 섹션이 전체 화면에서 보이도록 */
 `;
 
 const MockupImageBack = styled(motion.img)`
