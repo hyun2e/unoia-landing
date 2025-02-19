@@ -1,6 +1,7 @@
 import AICard from "./AICard";
 import Headline from "./Headline";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const AICardInfo = [
   [
@@ -18,7 +19,7 @@ const AICardInfo = [
     "각 나라의 문화를 잘 보여주는 드라마는? 🌏",
   ],
   [
-    "내  집 마련을 하려면 얼마를 모아야 할까? 🏠",
+    "내 집 마련을 하려면 얼마를 모아야 할까? 🏠",
     "‘트럼프 변수'에 대한 생각은? 🇺🇸",
     "각 나라의 '연애'와 '썸'은 어떻게 다를까? 💕",
     "존댓말 VS 반말? 🥊",
@@ -29,7 +30,7 @@ const AICardInfo = [
     "퓨전 음식에 대한 생각은? 🍍🍕",
     "각 나라의 흔한 아침 루틴은? ☀️",
     "크리스마스는 가족들과 or 친구들과? 🎄",
-    "암기력 VS 창의력  🥊",
+    "암기력 VS 창의력 🥊",
   ],
   [
     "미니멀리즘 VS 맥시멀리즘? 🥊",
@@ -43,7 +44,6 @@ const AICardInfo = [
 const StyledSection06 = styled.div`
   background-color: ${({ theme }) => theme.colors.gray600};
   overflow: hidden;
-
   h2, p {
     color: white;
   }
@@ -57,7 +57,7 @@ const AICardContainer = styled.div`
   gap: 20px;
 `;
 
-const RowContainer = styled.div`
+const RowContainer = styled(motion.div)`  // motion.div로 변경
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -73,10 +73,14 @@ const Section06 = () => {
         description="AI의 흥미로운 질문과 주제로 자연스러운 참여를 유도합니다."
         description_width="255px"
       />
-      {/* AICard Container */}
       <AICardContainer>
         {AICardInfo.map((e1, i) => (
-          <RowContainer key={i}>
+          <RowContainer
+            key={i}
+            initial={{ opacity: 0 }}   // 시작 상태
+            whileInView={{ opacity: 1 }}  // 화면에 들어오면 opacity가 1로 변경
+            transition={{ duration: 0.5, delay: i * 0.4 }} // 1초 텀을 두고
+          >
             {e1.map((e2, j) => (
               <AICard key={j} info={e2} row_index={i} />
             ))}
