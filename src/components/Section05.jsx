@@ -82,7 +82,7 @@ const Section05 = () => {
       {/* Feed Section Moves Down */}
       <AnimatedFeedContainer
         initial={{ y: 0 }}
-        animate={{ y: cursorInMiddle ? 100 : 0 }} // Move downward by 100px when cursor is in the middle
+        animate={{ y: cursorInMiddle ? 60 : 0 }} // Move downward by 100px when cursor is in the middle
         transition={{ duration: 0.5 }}
       >
         <FeedContainer>
