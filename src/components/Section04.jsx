@@ -59,7 +59,7 @@ const Section04 = () => {
   return (
     <StyledSection ref={ref}>
       {/* GIF 애니메이션 (항상 보임) */}
-      <LogoImage src="src/assets/images/logo_collapse.gif" alt="설명1" />
+      <LogoImage src="/assets/images/logo_collapse.gif" alt="설명1" />
 
       {/* 스크롤 감지 후 1초 뒤에 서서히 등장하는 텍스트 */}
       {showText && (

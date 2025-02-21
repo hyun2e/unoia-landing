@@ -67,7 +67,7 @@ const AwardImageContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
+
   img {
     margin: 0px 54px;
   }
@@ -79,31 +79,31 @@ const Section09 = () => {
       nickname: "kiwidangdanggold.303",
       content:
         "자국 중심의 뉴스만 보다가, 외국 친구들과 이야기하면서 다양한 시각을 접했어요!",
-      src: "src/assets/images/S09_img01.png",
+      src: "/assets/images/S09_img01.png",
     },
     {
       nickname: "PierogiQueen",
       content:
         "친환경 여행에 관심이 많았는데, 유노이아에서 로컬 친구들이 직접 계획을 추천해줘서 좋았어요.",
-      src: "src/assets/images/S09_img02.png",
+      src: "/assets/images/S09_img02.png",
     },
     {
       nickname: "MbappeGOAT9",
       content:
         "단순한 언어 교환이 아니라, 글로벌한 밈과 트렌드를 공유할 수 있어서 더 재밌어요.",
-      src: "src/assets/images/S09_img03.png",
+      src: "/assets/images/S09_img03.png",
     },
     {
       nickname: "SpicySari",
       content:
         "외국인 친구들과 로컬 문화에 대해 대화를 나눠볼 수 있어서 신기했어요!",
-      src: "src/assets/images/S09_img04.png",
+      src: "/assets/images/S09_img04.png",
     },
     {
       nickname: "PikaYui1234",
       content:
         "각국의 정치·사회 문제를 현지인 시각에서 듣다 보니, 미디어와 달라서 흥미로웠어요.",
-      src: "src/assets/images/S09_img05.png",
+      src: "/assets/images/S09_img05.png",
     },
   ];
 
@@ -113,36 +113,42 @@ const Section09 = () => {
         title="Unoia로 대화를 나눈 유저들의 이야기"
         title_width="460px"
         description="국적에 상관없이 쉽고 재밌게 문화 교류의 장에 참여할 수 있습니다."
-        description_width="560px"  
+        description_width="560px"
       />
       <ReviewCardContainer>
         {/* 첫 번째 줄 (왼쪽으로 이동) */}
         <RowContainer direction="left">
           <ExtendedRow>
-            {reviewInfo.concat(reviewInfo).concat(reviewInfo).map((review, index) => (
-              <ReviewCardWrapper key={index}>
-                <Reviewcard
-                  nickname={review.nickname}
-                  content={review.content}
-                  src={review.src}
-                />
-              </ReviewCardWrapper>
-            ))}
+            {reviewInfo
+              .concat(reviewInfo)
+              .concat(reviewInfo)
+              .map((review, index) => (
+                <ReviewCardWrapper key={index}>
+                  <Reviewcard
+                    nickname={review.nickname}
+                    content={review.content}
+                    src={review.src}
+                  />
+                </ReviewCardWrapper>
+              ))}
           </ExtendedRow>
         </RowContainer>
 
         {/* 두 번째 줄 (오른쪽으로 이동) */}
         <RowContainer direction="right">
           <ExtendedRow>
-            {reviewInfo.concat(reviewInfo).concat(reviewInfo).map((review, index) => (
-              <ReviewCardWrapper key={index}>
-                <Reviewcard
-                  nickname={review.nickname}
-                  content={review.content}
-                  src={review.src}
-                />
-              </ReviewCardWrapper>
-            ))}
+            {reviewInfo
+              .concat(reviewInfo)
+              .concat(reviewInfo)
+              .map((review, index) => (
+                <ReviewCardWrapper key={index}>
+                  <Reviewcard
+                    nickname={review.nickname}
+                    content={review.content}
+                    src={review.src}
+                  />
+                </ReviewCardWrapper>
+              ))}
           </ExtendedRow>
         </RowContainer>
       </ReviewCardContainer>
@@ -150,8 +156,8 @@ const Section09 = () => {
       <AwardWrapper>
         <p>unoia는 어워드를 수상하고 싶습니다</p>
         <AwardImageContainer>
-          <img src="src/assets/images/S09_Prize_left.png" />
-          <img src="src/assets/images/S09_Prize_right.png" />
+          <img src="/assets/images/S09_Prize_left.png" />
+          <img src="/assets/images/S09_Prize_right.png" />
         </AwardImageContainer>
       </AwardWrapper>
     </StyledSection09>

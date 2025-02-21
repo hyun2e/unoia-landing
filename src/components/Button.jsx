@@ -1,4 +1,4 @@
-// src/components/Button.js
+// /components/Button.js
 import React from "react";
 import styled from "styled-components";
 
@@ -46,7 +46,6 @@ const CoralButton = styled.a`
   }
 `;
 
-
 // NavButton 스타일 정의
 const NavButton = styled.a`
   display: inline-block;
@@ -69,8 +68,6 @@ const NavButton = styled.a`
   }
 `;
 
-
-
 // Button 컴포넌트
 // full-btn
 const Button = ({ type, href, children }) => {
@@ -82,11 +79,11 @@ const Button = ({ type, href, children }) => {
         </BlackButton>
       );
     case "nav-btn":
-    return (
-      <NavButton href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </NavButton>
-    );
+      return (
+        <NavButton href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </NavButton>
+      );
     case "coral-btn":
     default:
       return (

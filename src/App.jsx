@@ -1,4 +1,4 @@
-// src/App.jsx
+// /App.jsx
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyles";
@@ -20,7 +20,7 @@ import Footer from "./components/Footer";
 
 // 예시 슬라이드 데이터: src 값으로 정적인 이미지 URL을 사용합니다.
 const slidesHero = [
-  { src: "src/assets/images/hero01.png", content: "Slide 1" },
+  { src: "/assets/images/hero01.png", content: "Slide 1" },
   { src: "https://placehold.co/600x400/blue/yellow", content: "Slide 2" },
   { src: "https://placehold.co/600x400/green/black", content: "Slide 3" },
   { src: "https://placehold.co/600x400/red/white", content: "Slide 4" },

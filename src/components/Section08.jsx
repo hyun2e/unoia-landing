@@ -115,7 +115,7 @@ const Section08 = () => {
             앨범형 보관함
           </h3>
           <ImageWrapper>
-            <img src="src/assets/images/S08_Mock_up03.png" alt="Mock Up 03" />
+            <img src="/assets/images/S08_Mock_up03.png" alt="Mock Up 03" />
           </ImageWrapper>
         </SideSlide>
 
@@ -127,7 +127,7 @@ const Section08 = () => {
             내가 쓴 피드도 저장
           </h3>
           <ImageWrapper>
-            <img src="src/assets/images/S08_Mock_up04.png" alt="Mock Up 04" />
+            <img src="/assets/images/S08_Mock_up04.png" alt="Mock Up 04" />
           </ImageWrapper>
         </SideSlide>
 
@@ -138,7 +138,7 @@ const Section08 = () => {
             <br /> 한 눈에 확인하는 내용
           </h3>
           <ImageWrapper>
-            <img src="src/assets/images/S08_Mock_up05.png" alt="Mock Up 05" />
+            <img src="/assets/images/S08_Mock_up05.png" alt="Mock Up 05" />
           </ImageWrapper>
         </SideSlide>
       </StyledSection08>

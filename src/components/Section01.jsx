@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const SectionContainer = styled.div`
-  background-color: #E8E3FC;
+  background-color: #e8e3fc;
   background-position: center;
   position: relative;
   min-height: 100vh;
@@ -84,9 +84,9 @@ const TextContainer = styled.div`
 const Section01 = () => {
   return (
     <SectionContainer>
-      <BgImg1 src="src/assets/images/S01_object03.png" {...pendulumAnimation1} />
-      <BgImg2 src="src/assets/images/S01_object02.png" {...pendulumAnimation2} />
-      <BgImg3 src="src/assets/images/S01_object01.png" {...pendulumAnimation3} />
+      <BgImg1 src="/assets/images/S01_object03.png" {...pendulumAnimation1} />
+      <BgImg2 src="/assets/images/S01_object02.png" {...pendulumAnimation2} />
+      <BgImg3 src="/assets/images/S01_object01.png" {...pendulumAnimation3} />
 
       <TextContainer>
         <div>

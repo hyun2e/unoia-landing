@@ -1,4 +1,4 @@
-// src/styles/GlobalStyles.js
+// /styles/GlobalStyles.js
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import NotoSansWoff2 from "../assets/fonts/NotoSansKR-Variable.woff2";
@@ -59,7 +59,6 @@ p {
   line-height: 30px;
   color: ${({ theme }) => theme.colors.gray600};
 }
-`;  
-
+`;
 
 export default GlobalStyle;
