@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import Button from "./Button";
-import heroImage from "../assets/images/hero_img.png"; 
 
 const HeroSectionWrapper = styled.div`
-  background-image: url(${heroImage});
+  background-image: url("../assets/images/hero_img.png");
   background-size: cover;
   background-position: center;
   width: 100%;

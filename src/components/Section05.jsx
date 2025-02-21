@@ -2,13 +2,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import Headline from "./Headline";
-import S05BackgroundImg from "../assets/images/S05_background_img.png";
-import FeedBefore from "../assets/images/S05_feed_before.png";
-import FeedAfter from "../assets/images/S05_feed_after.png";
-import TranslateIconPurpleImg from "../assets/images/S05_translation_icon_purple.png"; // 보라색 아이콘 사용
 
 const SectionWrapper = styled.div`
-  background-image: url(${S05BackgroundImg});
+  background-image: url("../assets/images/S05_background_img.png");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -71,12 +67,15 @@ const Section05 = () => {
           transition={{ duration: 1.6 }}
           viewport={{ amount: 0.5 }}
         >
-          <TranslateIcon src={TranslateIconPurpleImg} alt="Translate" />
+          <TranslateIcon
+            src={"/assets/images/S05_translation_icon_purple.png"}
+            alt="Translate"
+          />
         </TranslationIconWrapper>
 
         {/* Before → After 이미지 변경 (아이콘 애니메이션 이후 변경) */}
         <FeedImage
-          src={FeedBefore}
+          src={"/assets/images/S05_feed_before.png"}
           alt="Feed Before"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
@@ -84,7 +83,7 @@ const Section05 = () => {
           viewport={{ amount: 0.5 }}
         />
         <FeedImage
-          src={FeedAfter}
+          src={"/assets/images/S05_feed_after.png"}
           alt="Feed After"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

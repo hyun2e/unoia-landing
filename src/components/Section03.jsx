@@ -1,12 +1,9 @@
 import { useRef, useEffect } from "react";
-import bgImage from "../assets/images/S03_background_img.png"; // 배경 이미지
-import mockup1 from "../assets/images/S03_Mock_up01.png"; // ✅ 이미지 import
-import mockup2 from "../assets/images/S03_Mock_up02.png"; // ✅ 이미지 import
 import styled from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const StyledSection03 = styled.div`
-  background-image: url(${bgImage});
+  background-image: url("../assets/images/S03_background_img.png");
   background-position: center;
   position: relative;
   z-index: -100;
@@ -33,7 +30,11 @@ const Section03 = () => {
 
   useEffect(() => {
     if (isInView) {
-      controlsBack.start({ x: -120, rotate: -12, transition: { duration: 0.5 } });
+      controlsBack.start({
+        x: -120,
+        rotate: -12,
+        transition: { duration: 0.5 },
+      });
       controlsFront.start({ x: 80, rotate: 12, transition: { duration: 0.5 } });
     } else {
       // 🔄 원래 위치로 되돌려서 다시 애니메이션 실행 가능하게 설정
@@ -47,13 +48,13 @@ const Section03 = () => {
       <MockupImageBack
         initial={{ x: 0, rotate: 0 }}
         animate={controlsBack}
-        src={mockup1}
+        src={"/assets/images/S03_Mock_up01.png"}
         alt="mockup1"
       />
       <MockupImageFront
         initial={{ x: 0, rotate: 0 }}
         animate={controlsFront}
-        src={mockup2}
+        src={"/assets/images/S03_Mock_up02.png"}
         alt="mockup2"
       />
     </StyledSection03>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Headline from "./Headline";
-import videoSrc from "../assets/images/section07.mp4"; // 비디오 파일 가져오기
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -25,13 +24,19 @@ const BackgroundVideo = styled.video`
 const Section07 = () => {
   return (
     <SectionContainer>
-        <Headline
-          title="국경과 언어를 모두 넘어 우리의 궁금증을 실시간으로 나누는 곳!"
-          title_width="650px"
-          description="궁금한 거 있으면 물어도 보고, 핫이슈로 토크배틀도 하고!"
-          description_width="500px"
-        />
-      <BackgroundVideo src={videoSrc} autoPlay loop muted playsInline />
+      <Headline
+        title="국경과 언어를 모두 넘어 우리의 궁금증을 실시간으로 나누는 곳!"
+        title_width="650px"
+        description="궁금한 거 있으면 물어도 보고, 핫이슈로 토크배틀도 하고!"
+        description_width="500px"
+      />
+      <BackgroundVideo
+        src={"/assets/images/section07.mp4"}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
     </SectionContainer>
   );
 };
