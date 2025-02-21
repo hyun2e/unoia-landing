@@ -66,8 +66,13 @@ const NavBar = () => {
             <NavLink href="#review">후기</NavLink>
 
             {/* 다운로드 버튼 */}
-            <Button type="nav-btn" as="a" href="#Unoiadownload">
-              다운로드
+            <Button
+              type="nav-btn"
+              as="a"
+              href="https://www.figma.com/proto/OxpJvC3XchjOVC4LNvpoxO/6%EC%A1%B0?node-id=5786-37232&t=63vugqGbZz7KnV29-1"
+              target="_blank"
+            >
+              체험하기
             </Button>
           </NavButtons>
         </ContentsWrapper>

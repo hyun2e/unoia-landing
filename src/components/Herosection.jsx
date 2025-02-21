@@ -36,7 +36,12 @@ const Herosection = () => {
           <Title>언어를 잊고 대화를 잇다</Title>
           <Subtitle>You know? We know</Subtitle>
         </div>
-        <Button>지금 바로 대화하러 가기</Button>
+        <Button
+          href="https://www.figma.com/proto/OxpJvC3XchjOVC4LNvpoxO/6%EC%A1%B0?node-id=5786-37232&t=63vugqGbZz7KnV29-1"
+          target="_blank"
+        >
+          지금 바로 대화하러 가기
+        </Button>
       </ContentWrapper>
     </HeroSectionWrapper>
   );
